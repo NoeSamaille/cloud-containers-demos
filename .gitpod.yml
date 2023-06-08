@@ -1,0 +1,9 @@
+tasks:
+  - name: install-tools
+    before: cd /home/gitpod
+    init: |
+      wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable/openshift-client-linux.tar.gz
+      tar -xvf openshift-client-linux.tar.gz
+      mv oc /home/gitpod/.local/bin/
+      mv kubectl /home/gitpod/.local/bin/
+      cd /workspace/cloud-containers-demos
