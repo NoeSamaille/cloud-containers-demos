@@ -13,7 +13,11 @@ spec:
     spec:
       containers:
       - name: server
-        image: quay.io/noesamaille0/flask-server:0.0.1
+        image: quay.io/noesamaille0/flask-server:0.0.2
+        envFrom:
+         - secretRef:
+            name: server
+            optional: true
         resources:
           limits:
             memory: "128Mi"
